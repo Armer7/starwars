@@ -11,4 +11,5 @@ jobs:
       with:
         username: 'Armer7'
         reponame: 'starwars'
+        useyarn: 'true'
         token: ${{ secrets.GITHUB_TOKEN }} # Leave this line unchanged
