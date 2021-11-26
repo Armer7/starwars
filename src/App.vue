@@ -9,6 +9,7 @@
 </template>
 
 <script>
+import { mapGetters, mapActions } from 'vuex';
 import FilmsList from '@/components/FilmsList.vue';
 import Search from './components/Search';
 
@@ -18,9 +19,21 @@ export default {
     Search,
     FilmsList,
   },
+  watch: {
+    isSearch: function () {
+      this.isSearch && this.$route.path !== '/' && this.$router.push('/');
+    },
+  },
+  computed: {
+    ...mapGetters({
+      search: 'search/getSearch',
+      isSearch: 'search/getIsSearch',
+    }),
+  },
   methods: {
+    ...mapActions({ changeSearch: 'search/changeSearch' }),
     onSearch(value) {
-      console.log(value);
+      this.changeSearch(value);
     },
   },
 };

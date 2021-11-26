@@ -5,7 +5,7 @@ import getters from './getters';
 export default {
   namespaced: true,
   state: {
-    planets: {},
+    people: {},
     isLoading: false,
     isError: false,
     error: '',

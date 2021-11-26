@@ -1,11 +1,12 @@
 <template>
   <label class="search">
     <input type="text" v-model="search" placeholder="Search" @input="onInput" />
-    <img src="@/assets/search.png" alt="search" />
+    <img src="../assets/search.png" alt="search" />
   </label>
 </template>
 
 <script>
+import { mapActions } from 'vuex';
 export default {
   name: 'Search',
   data() {
@@ -14,7 +15,17 @@ export default {
       search: '',
     };
   },
+  watch: {
+    '$route.path': function () {
+      if (this.$route.path !== '/') {
+        this.changeSearch('');
+        this.search = '';
+      }
+    },
+  },
   methods: {
+    ...mapActions({ changeSearch: 'search/changeSearch' }),
+
     onInput() {
       clearTimeout(this.timeout);
       this.timeout = setTimeout(() => {

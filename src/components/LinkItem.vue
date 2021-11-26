@@ -19,22 +19,21 @@ export default {
 
 <style lang="scss">
 .item {
-  width: 100%;
-  padding: 5px 10px;
+  padding: 5px 5px;
   border-radius: 6px;
-  margin-bottom: 10px;
+  margin: 5px;
   background-color: gray;
   font-weight: bold;
 
   .title {
     padding-bottom: 2px;
-    font-size: 20px;
+    font-size: 16px;
     color: white;
   }
 
   .subtitle {
     padding-left: 4px;
-    font-size: 16px;
+    font-size: 14px;
   }
 
   &:hover {

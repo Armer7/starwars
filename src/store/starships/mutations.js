@@ -1,10 +1,10 @@
 import * as types from './mutationTypes';
 
 export default {
-  [types.ADD_PLANETS](state, payload) {
-    state.planets = {
-      ...state.planets,
-      [payload.page]: payload.planets,
+  [types.ADD_STARSHIPS](state, payload) {
+    state.starships = {
+      ...state.starships,
+      [payload.page]: payload.starships,
       numberOfPages: payload.numberOfPages,
     };
   },

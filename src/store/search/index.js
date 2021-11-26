@@ -5,10 +5,8 @@ import getters from './getters';
 export default {
   namespaced: true,
   state: {
-    planets: {},
-    isLoading: false,
-    isError: false,
-    error: '',
+    search: '',
+    isSearch: false,
   },
   actions,
   mutations,

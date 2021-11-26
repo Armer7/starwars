@@ -1,19 +1,19 @@
-import { getPlanets } from '../../api';
+import { getStarships } from '../../api';
 import { GetPageNumber, AddIdToData } from '../../utils';
 import * as types from './mutationTypes';
 
 export default {
-  async requestPlanets({ commit, rootGetters }, page = 1) {
+  async requestStarships({ commit, rootGetters }, page = 1) {
     commit(types.FETCH_INIT);
     const filter = {
       page,
       search: rootGetters['search/getSearch'],
     };
     try {
-      const result = await getPlanets(filter);
+      const result = await getStarships(filter);
       commit({
-        type: types.ADD_PLANETS,
-        planets: AddIdToData(result.results),
+        type: types.ADD_STARSHIPS,
+        starships: AddIdToData(result.results),
         numberOfPages: GetPageNumber(result.count),
         page,
       });
