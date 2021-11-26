@@ -79,6 +79,7 @@ export default {
 }
 .ItemList {
   display: flex;
+  flex-wrap: wrap;
   border: 1px solid white;
   border-radius: 5px;
   padding: 5px;
