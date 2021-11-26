@@ -3,11 +3,9 @@ module.exports = {
   css: {
     loaderOptions: {
       sass: {
-        prependData: `
-          @import "@/css/_variables.scss";
-        `,
+        prependData: '@import "@/css/_variables.scss";',
       },
     },
   },
-  publicPath: process.env.NODE_ENV === 'production' ? '/starwars/' : '/',
+  publicPath: '/starvars/',
 };
